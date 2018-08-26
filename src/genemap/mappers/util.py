@@ -26,7 +26,7 @@ def drop_duplicates(mapping, how='both'):
     # Apply column masks.
     masks = [_duplicate_mask(mapping, c) for c in columns]
     mask = reduce(lambda m1, m2: m1 | m2, masks)
-    masked_mapping = mapping.iloc[~mask]
+    masked_mapping = mapping[~mask]
 
     return masked_mapping
 
