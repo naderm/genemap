@@ -33,5 +33,5 @@ def drop_duplicates(mapping, how='both'):
 
 def _duplicate_mask(frame, column):
     duplicate_rows = frame.duplicated(subset=column)
-    duplicate_values = set(frame.iloc[duplicate_rows][column])
+    duplicate_values = set(frame[duplicate_rows][column])
     return frame[column].isin(duplicate_values)
